@@ -1,13 +1,13 @@
 # Analysis of the Economic and Political Impacts on Cybercrime
 
-# Motivation
+## Motivation
  I am interested in cyber security. Cybercrimes are a huge part of cyber security, and it is an important research topic. I have always wondered what the factors that push people or organizations to commit cybercrimes are. While most cybersecurity research focuses on technical vulnerabilities, in this project I will be focusing on how economic and geopolitical factors are associated with cybercrime.
 
-# Data Collection
+## Data Collection
 
 This project integrates **three primary heterogeneous datasets** covering the years **2014–2026**, aligned geographically via **ISO3 codes** and temporally by **year/month**.  
 
-## 1. Cyber Incident Data (General Activity)
+### 1. Cyber Incident Data (General Activity)
 
 - **Source:** Cyber Events Tracker (Consolidated Incident Log)  
 - **Frequency:** Event-based  
@@ -19,7 +19,7 @@ This project integrates **three primary heterogeneous datasets** covering the ye
   - `actor_type`: Distinguishes between **Criminal**, **Nation-State**, and **Hacktivist**  
   - `country` & `actor_country`: For mapping cross-border aggression  
 
-## 2. Geopolitical Cyber Incidents (EuRepoC)
+### 2. Geopolitical Cyber Incidents (EuRepoC)
 
 - **Source:** European Repository of Cyber Incidents (EuRepoC)  
 - **Frequency:** Event-based (high-resolution coding)  
@@ -31,7 +31,7 @@ This project integrates **three primary heterogeneous datasets** covering the ye
   - `political_response_type`: Tracks if the incident led to sanctions or diplomatic protests  
   - `receiver_country_alpha_2_code`: Facilitates merging with other national datasets  
 
-## 3. Socio-Economic Indicators (World Bank)
+### 3. Socio-Economic Indicators (World Bank)
 
 - **Source:** World Bank Open Data (World Development Indicators)  
 - **Frequency:** Annual  
@@ -42,7 +42,7 @@ This project integrates **three primary heterogeneous datasets** covering the ye
   - `GDP growth (annual %)` & `Inflation (CPI)`: Indicators of economic instability that may trigger criminal activity  
   - `Country Code`: Primary key for relational joining (ISO3)
  
- # Methodology
+ ## Methodology
 
 This project employs a **quantitative, correlation-based approach** to analyze the impact of socio-economic and political volatility on global cyber activity. The research will be executed in the following phases:
 

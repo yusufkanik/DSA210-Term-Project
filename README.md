@@ -1,6 +1,9 @@
 # DSA210-Term-Project
 DSA 210 Term Project
 
+# Motivation
+ I am interested in cyber security. Cybercrimes are a huge part of cyber security, and it is an important research topic. I have always wondered what the factors that push people or organizations to commit cybercrimes are. In this project I will be focusing on how economic and geopolitical factors are associated with cybercrime.
+
 # Data Collection
 
 This project integrates **three primary heterogeneous datasets** covering the years **2014–2026**, aligned geographically via **ISO3 codes** and temporally by **year/month**.  

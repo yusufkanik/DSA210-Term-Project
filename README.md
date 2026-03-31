@@ -66,7 +66,7 @@ Visualization will be performed using **Matplotlib/Seaborn** to explore:
 ### Hypothesis 1: Political Stability Shock (Paired T-Test)
 
 - **H₀:** The average number of "Protest" motivated attacks is the same **6 months before** and **6 months after** a sudden drop in a country’s "Political Stability" score.  
-- **Hₐ:** There is a significant increase in the average number of "Protest" attacks following a decline in stability.  
+- **Hₐ:** The average number of "Protest" motivated attacks is greater in the 6 months following a decline in stability than in the 6 months before.  
 - **Method:** Paired T-Test to compare the "before" and "after" states of the same country.  
 
 ### Hypothesis 2: Observed vs. Expected Attack Motives (Chi-Square Statistic)

@@ -43,7 +43,7 @@ This project integrates **three primary heterogeneous datasets** covering the ye
   - `GDP growth (annual %)` & `Inflation (CPI)`: Indicators of economic instability that may trigger criminal activity  
   - `Country Code`: Primary key for relational joining (ISO3)
  
-  ## Methodology
+ # Methodology
 
 This project employs a **quantitative, correlation-based approach** to analyze the impact of socio-economic and political volatility on global cyber activity. The research will be executed in the following phases:
 

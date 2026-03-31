@@ -1,7 +1,7 @@
 # DSA210-Term-Project
 DSA 210 Term Project
 
-# Project Overview
+# Data Collection
 
 This project integrates **three primary heterogeneous datasets** covering the years **2014–2026**, aligned geographically via **ISO3 codes** and temporally by **year/month**.  
 

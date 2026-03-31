@@ -2,7 +2,7 @@
 DSA 210 Term Project
 
 # Motivation
- I am interested in cyber security. Cybercrimes are a huge part of cyber security, and it is an important research topic. I have always wondered what the factors that push people or organizations to commit cybercrimes are. In this project I will be focusing on how economic and geopolitical factors are associated with cybercrime.
+ I am interested in cyber security. Cybercrimes are a huge part of cyber security, and it is an important research topic. I have always wondered what the factors that push people or organizations to commit cybercrimes are. While most cybersecurity research focuses on technical vulnerabilities, in this project I will be focusing on how economic and geopolitical factors are associated with cybercrime.
 
 # Data Collection
 

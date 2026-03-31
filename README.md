@@ -1,5 +1,4 @@
-# Analysis of the Economic and Political                                                                 
-                  Impacts on Cybercrime
+# Analysis of the Economic and Political Impacts on Cybercrime
 
 # Motivation
  I am interested in cyber security. Cybercrimes are a huge part of cyber security, and it is an important research topic. I have always wondered what the factors that push people or organizations to commit cybercrimes are. While most cybersecurity research focuses on technical vulnerabilities, in this project I will be focusing on how economic and geopolitical factors are associated with cybercrime.

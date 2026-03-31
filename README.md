@@ -59,4 +59,18 @@ The primary technical challenge involves merging **event-based cyber data** with
 Visualization will be performed using **Matplotlib/Seaborn** to explore:
 
 - **Temporal Trends:** Identify if spikes in Inflation (CPI) or drops in GDP Growth precede a rise in Financial motive cyber incidents.  
-- **Geospatial Heatmaps:** Map `actor_country` against `offline_conflict_intensity` to identify global "hotspots" of digital aggression.    
+- **Geospatial Heatmaps:** Map `actor_country` against `offline_conflict_intensity` to identify global "hotspots" of digital aggression.
+
+## Hypothesis Tests
+
+### Hypothesis 2: Political Stability Shock (Paired T-Test)
+
+- **H₀:** The average number of "Protest" motivated attacks is the same **6 months before** and **6 months after** a sudden drop in a country’s "Political Stability" score.  
+- **Hₐ:** There is a significant increase in the average number of "Protest" attacks following a decline in stability.  
+- **Method:** Paired T-Test to compare the "before" and "after" states of the same country.  
+
+### Hypothesis 4: Observed vs. Expected Attack Motives (Chi-Square Statistic)
+
+- **H₀:** The observed frequencies of attack motives (**Financial, Protest, Espionage**) during an economic crisis follow the expected historical distribution.  
+- **Hₐ:** The observed frequencies significantly deviate from the expected distribution (e.g., Financial motives appear more than expected).  
+- **Method:** Chi-Square Statistic to measure the discrepancy between actual crisis data and historical baseline data.      

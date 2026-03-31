@@ -41,4 +41,23 @@ This project integrates **three primary heterogeneous datasets** covering the ye
    
   - `GDP per capita (current US$)`: Measures the economic "target value" of a country  
   - `GDP growth (annual %)` & `Inflation (CPI)`: Indicators of economic instability that may trigger criminal activity  
-  - `Country Code`: Primary key for relational joining (ISO3)  
+  - `Country Code`: Primary key for relational joining (ISO3)
+ 
+  ## Methodology
+
+This project employs a **quantitative, correlation-based approach** to analyze the impact of socio-economic and political volatility on global cyber activity. The research will be executed in the following phases:
+
+### 1. Data Integration & Preprocessing
+
+The primary technical challenge involves merging **event-based cyber data** with **annual economic indicators**. Python (`pandas`) will be used to:
+
+- **Reshape Indicators:** Transform World Bank data from "Wide" to "Long" format using `pd.melt()` to align with the temporal timeline.  
+- **Relational Joining:** Execute a left-join using a composite key of `[ISO3_Country]` and `[Year]`.  
+- **Normalization:** Convert nominal GDP values to real terms and normalize cyber-attack counts per capita to ensure cross-country comparability.  
+
+### 2. Exploratory Data Analysis (EDA)
+
+Visualization will be performed using **Matplotlib/Seaborn** to explore:
+
+- **Temporal Trends:** Identify if spikes in Inflation (CPI) or drops in GDP Growth precede a rise in Financial motive cyber incidents.  
+- **Geospatial Heatmaps:** Map `actor_country` against `offline_conflict_intensity` to identify global "hotspots" of digital aggression.    

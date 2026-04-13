@@ -55,7 +55,7 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 * **Ingestion & Scope:** Loading Maryland and EuRepoC cyber datasets, filtered to match 2014-2026 timeline.
 * **Standardization:** Cleaning and converting country names into standard ISO-3 codes using `pycountry`, and extracting event years.
 * **Economic Integration:** Fetching GDP, Inflation, and Political Stability directly using the World Bank API (`wbgapi`).
-* **Merging & Imputation:** Joining the cyber and economic data based on country code and year, and forward-filling any missing economic indicators.
+* **Merging & Imputation:** Joining the cyber and economic data based on country code and year, **forward-filling** is used to handle missing economic data, which automatically carries over a country's last known value (like the previous year's GDP) to fill in blank years so the statistical tests don't fail.
 
 ### 2. Exploratory Data Analysis (EDA)
 

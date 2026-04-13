@@ -50,9 +50,12 @@ This project employs a **quantitative, correlation-based approach** to analyze t
 
 The primary technical challenge involves merging **event-based cyber data** with **annual economic indicators**. Python (`pandas`) will be used to:
 
-- **Reshape Indicators:** Transform World Bank data from "Wide" to "Long" format using `pd.melt()` to align with the temporal timeline.  
-- **Relational Joining:** Execute a left-join using a composite key of `[ISO3_Country]` and `[Year]`.  
-- **Normalization:** Convert nominal GDP values to real terms and normalize cyber-attack counts per capita to ensure cross-country comparability.  
+The dataset generation (`scripts/final_data.py`) involves the following steps:
+
+* **Ingestion & Scope:** Loading Maryland and EuRepoC cyber datasets, filtered to match 2014-2026 timeline.
+* **Standardization:** Cleaning and converting country names into standard ISO-3 codes using `pycountry`, and extracting event years.
+* **Economic Integration:** Fetching GDP, Inflation, and Political Stability directly using the World Bank API (`wbgapi`).
+* **Merging & Imputation:** Joining the cyber and economic data based on country code and year, and forward-filling any missing economic indicators.
 
 ### 2. Exploratory Data Analysis (EDA)
 

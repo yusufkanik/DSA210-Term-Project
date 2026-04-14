@@ -106,16 +106,13 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 
 ### Installation
 ```bash
-# Clone the repository
-git clone [https://github.com/yusufkanik/DSA210-Term-Project.git](https://github.com/yusufkanik/DSA210-Term-Project.git)
+git clone https://github.com/yusufkanik/DSA210-Term-Project.git
 cd DSA210-Term-Project
 
-# Create and activate virtual environment
 python -m venv venv
 # For Windows:
 venv\Scripts\activate
 # For macOS/Linux:
 source venv/bin/activate
 
-# Install dependencies
 pip install -r requirements.txt

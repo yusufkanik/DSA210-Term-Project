@@ -39,7 +39,8 @@ This project integrates **three primary heterogeneous datasets** covering the ye
 - **Key Features for Analysis:**
    
   - `GDP per capita (current US$)`: Measures the economic "target value" of a country  
-  - `GDP growth (annual %)` & `Inflation (CPI)`: Indicators of economic instability that may trigger criminal activity  
+  - `GDP growth (annual %)` & `Inflation (CPI)`: Indicators of economic instability that may trigger criminal activity
+  - `Political Stability`: Measures the likelihood of political instability or politically-motivated violence (merged via CSV)
   - `Country Code`: Primary key for relational joining (ISO3)
  
  ## Methodology
@@ -54,23 +55,23 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 
 * **Ingestion & Scope:** Loading Maryland and EuRepoC cyber datasets, filtered to match 2014-2026 timeline.
 * **Standardization:** Cleaning and converting country names into standard ISO-3 codes using `pycountry`and fuzzy search, and extracting event years.
-* **Economic Integration:** Fetching GDP, Inflation, and Political Stability directly using the World Bank API (`wbgapi`).
+* **Economic Integration:** Fetching GDP and Inflation using the World Bank API (`wbgapi`), while integrating Political Stability via a manually downloaded CSV export (as the API for this specific indicator could not be used). This step also required significant data cleaning, such as handling static dataset merges and parsing text-based stability metrics into functional `float64` numeric types.
 * **Merging & Imputation:** Joining the cyber and economic data based on country code and year, **forward-filling** is used to handle missing economic data, which automatically carries over a country's last known value (like the previous year's GDP) to fill in blank years so the statistical tests don't fail.
 
 ### 2. Exploratory Data Analysis (EDA)
 
-Visualization will be performed using **Matplotlib/Seaborn** to explore:
-
-- **Temporal Trends:** Identify if spikes in Inflation (CPI) or drops in GDP Growth precede a rise in Financial motive cyber incidents.  
-- **Geospatial Heatmaps:** Map `actor_country` against `offline_conflict_intensity` to identify global "hotspots" of digital aggression.
+- Visualization is performed using Matplotlib and Seaborn to explore the macroeconomic drivers of cyber warfare:
+* **Macro Bubble Plots:** Mapping GDP per Capita against total attack volume to visualize the "Wealthy Target" effect, with bubble sizes representing the real-world intensity of the attacks.
+* **Correlation Heatmaps:** Analyzing the statistical relationships between baseline economic indicators (GDP, Political Stability) and cyber metrics (Attack Volume, Attack Intensity).
+* **Motive & Actor Distributions:** Tracking the dominant cyber threat actors and their primary attack motives globally.
 
 ## Hypothesis Tests
 
 ### Hypothesis 1: Political Stability Shock (Paired T-Test)
 
-- **H₀:** The average number of "Protest" motivated attacks is the same **6 months before** and **6 months after** a sudden drop in a country’s "Political Stability" score.  
-- **Hₐ:** The average number of "Protest" motivated attacks is greater in the 6 months following a decline in stability than in the 6 months before.  
-- **Method:** Paired T-Test to compare the "before" and "after" states of the same country.
+* **H₀:** The average number of "Protest" motivated attacks is the same the year before vs. the year of a sudden drop in a country’s "Political Stability" score.
+* **Hₐ:** The average number of "Protest" motivated attacks is greater in the year of a stability drop than in the year prior.
+* **Method:** Paired T-Test to compare the "before" (Year - 1) and "after" (Year 0) states of the exact same country.
 - **Result:** **Not Statistically Significant (Fail to Reject H₀)**
 * **Test Statistics:** Paired T-Test (n=387 shocks) | T-Statistic: `0.5429` | P-Value: `0.2938`
 * **Conclusion:** Sudden drops in political stability do not universally trigger an immediate surge in cyber protests. The high variance indicates that hacktivist responses are highly localized. A stability drop might cause a massive cyber reaction in one country, but zero response in another. 

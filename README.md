@@ -97,3 +97,25 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 * **Result:** **Highly Statistically Significant (Reject H₀)**
 * **Test Statistics:** One-Way ANOVA | F-Statistic: `1574.6477` | P-Value: `0.0000e+00`
 * **Conclusion:** There is a definitive link between the economic stature of a target nation and the motive of the cyber attack. Financial threat actors disproportionately target wealthier nations (higher GDP), likely seeking higher "return on investment." Conversely, Protest and Political-Espionage attacks are distributed more broadly across lower-GDP nations, indicating that these attacks are driven by geopolitical friction rather than purely economic gain.
+
+## Setup and Reproducibility
+
+### Requirements
+* Python 3.11+
+* Dependencies listed in `requirements.txt`
+
+### Installation
+```bash
+# Clone the repository
+git clone [https://github.com/yusufkanik/DSA210-Term-Project.git](https://github.com/yusufkanik/DSA210-Term-Project.git)
+cd DSA210-Term-Project
+
+# Create and activate virtual environment
+python -m venv venv
+# For Windows:
+venv\Scripts\activate
+# For macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt

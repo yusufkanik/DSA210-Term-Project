@@ -61,6 +61,7 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 ### 2. Exploratory Data Analysis (EDA)
 
 - Visualization is performed using Matplotlib and Seaborn to explore the macroeconomic drivers of cyber warfare:
+* **Time-Series Trends:** A temporal line chart tracking the volume of top attack motives (e.g., Financial, Protest) from 2014 to 2026, revealing macro-shifts in the global threat landscape.
 * **Macro Bubble Plots:** Mapping GDP per Capita against total attack volume to visualize the "Wealthy Target" effect, with bubble sizes representing the real-world intensity of the attacks.
 * **Correlation Heatmaps:** Analyzing the statistical relationships between baseline economic indicators (GDP, Political Stability) and cyber metrics (Attack Volume, Attack Intensity).
 * **Motive & Actor Distributions:** Tracking the dominant cyber threat actors and their primary attack motives globally.

@@ -90,7 +90,7 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 
 
 
-### Hypothesis 3: Target Country Wealth by Attack Motive**
+### Hypothesis 3: Target Country Wealth by Attack Motive
 * **H₀:** The average wealth (GDP) of a target country is the same regardless of the cyber attack's motive.
 * **Hₐ:** The average wealth (GDP) of a target country differs significantly based on the attack motive.
 * **Method:** One-Way ANOVA (Analysis of Variance) to compare the mean GDP across the top three distinct attack motives, visualized using a log-scaled boxplot.

@@ -71,7 +71,7 @@ Visualization will be performed using **Matplotlib/Seaborn** to explore:
 - **H₀:** The average number of "Protest" motivated attacks is the same **6 months before** and **6 months after** a sudden drop in a country’s "Political Stability" score.  
 - **Hₐ:** The average number of "Protest" motivated attacks is greater in the 6 months following a decline in stability than in the 6 months before.  
 - **Method:** Paired T-Test to compare the "before" and "after" states of the same country.
-- * **Result:** **Not Statistically Significant (Fail to Reject H₀)**
+- **Result:** **Not Statistically Significant (Fail to Reject H₀)**
 * **Test Statistics:** Paired T-Test (n=387 shocks) | T-Statistic: `0.5429` | P-Value: `0.2938`
 * **Conclusion:** Sudden drops in political stability do not universally trigger an immediate surge in cyber protests. The high variance indicates that hacktivist responses are highly localized. A stability drop might cause a massive cyber reaction in one country, but zero response in another. 
 
@@ -82,6 +82,6 @@ Visualization will be performed using **Matplotlib/Seaborn** to explore:
 - **H₀:** The observed frequencies of attack motives (**Financial, Protest, Espionage**) during an economic crisis follow the expected historical distribution.  
 - **Hₐ:** The observed frequencies significantly deviate from the expected distribution (e.g., Financial motives appear more than expected).  
 - **Method:** Chi-Square Statistic to measure the discrepancy between actual crisis data and historical baseline data.
-- * **Result:** **Highly Statistically Significant (Reject H₀)**
+- **Result:** **Highly Statistically Significant (Reject H₀)**
 * **Test Statistics:** Chi-Square Test | Chi-Square Statistic: `3081.9728` | Degrees of Freedom: `4` | P-Value: `0.0000e+00`
 * **Conclusion:** Severe economic crises (inflation > 10%) fundamentally shift hacker motivations. During normal conditions, threat actors prioritize **Financial** gain (**9,109** baseline attacks vs. **1,170** protest attacks). However, during an economic crisis, financial attacks plummet to just **148** incidents, while **Protest** attacks heavily dominate the landscape. During financial panic, hackers abandon monetary theft to weaponize the internet for protest and disruption.

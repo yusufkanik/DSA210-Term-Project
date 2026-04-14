@@ -116,3 +116,8 @@ venv\Scripts\activate
 source venv/bin/activate
 
 pip install -r requirements.txt
+```
+### Data Collection and Processing
+```
+python process_data.py
+```

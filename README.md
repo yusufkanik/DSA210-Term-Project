@@ -97,3 +97,31 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 * **Result:** **Highly Statistically Significant (Reject H₀)**
 * **Test Statistics:** One-Way ANOVA | F-Statistic: `1574.6477` | P-Value: `0.0000e+00`
 * **Conclusion:** There is a definitive link between the economic stature of a target nation and the motive of the cyber attack. Financial threat actors disproportionately target wealthier nations (higher GDP), likely seeking higher "return on investment." Conversely, Protest and Political-Espionage attacks are distributed more broadly across lower-GDP nations, indicating that these attacks are driven by geopolitical friction rather than purely economic gain.
+
+
+## Machine Learning
+
+### 1. Predicting Political Stability (Supervised Learning - Logistic Regression)
+* **Method:** **Logistic Regression** was used to classify whether a nation's environment is **Stable** or **Unstable (High Risk)** based on cyber conflict features (Intensity, Motive, Actor Type).
+* **Results (Accuracy: 58.17%):** While political stability is influenced by many non-digital factors, the model revealed critical "Impact Coefficients":
+    * **Instability Drivers:** Cyber attacks linked to **Physical Warfare (Offline Conflict)**, **Sabotage**, and **Protests** are the strongest predictors of a destabilizing environment.
+    * **The Espionage Paradox:** Surprisingly, **Espionage** (Political and Industrial) is negatively correlated with instability. These "silent" operations require a stable target to remain undetected; chaos would hinder intelligence collection.
+* **Conclusion:** Cyber warfare acts as a catalyst. Stable nations are targets for "silent" espionage, whereas unstable nations face "loud" sabotage and hybrid warfare.
+
+
+### 2. Forecasting Attack Motives (Supervised Learning - Random Forest)
+* **Method:** A **Random Forest Classifier** was trained to predict the primary **Motive** of a cyber attack (Financial, Protest, Espionage) based on a country's macroeconomic signature (**GDP per Capita** and **Inflation**).
+* **Results (Accuracy: 86.25%):**
+    * **Financial (97% Recall):** The model excels at identifying profit-driven attacks, confirming that national wealth and inflation are the primary magnets for global cybercrime.
+    * **Protest (61% Recall):** Economic distress triggers a mathematically predictable level of hacktivism and protest-motivated cyber activity.
+    * **Espionage (22% Recall):** The model struggled here, proving that state-sponsored espionage is driven by long-term military strategy rather than immediate macroeconomic indicators.
+* **Conclusion:** Macroeconomics is a near-perfect predictor for profit-motivated cybercrime, but insufficient for forecasting high-level state-sponsored espionage.
+
+
+### 3. Geopolitical Risk Profiling (Unsupervised Learning - K-Means Clustering)
+* **Method:** **K-Means Clustering** was applied to group countries based on their economic stature (GDP), inflation rates, and cyber target frequency to identify hidden patterns without predefined labels.
+* **Results:** The model successfully identified three distinct "Geopolitical Risk Clusters":
+    1.  **Stable Wealthy Targets:** High-GDP nations with high attack frequency but low inflation.
+    2.  **Volatile Emerging Markets:** Countries with moderate GDP and high inflation, attracting different motive profiles (predominantly protests).
+    3.  **Low-Intensity Zones:** Nations with minimal cyber-economic correlation.
+* **Conclusion:** Cybercrime patterns are not uniform across the globe; a country's economic "cluster" is a strong indicator of the specific threat landscape it will inhabit.

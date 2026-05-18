@@ -108,27 +108,40 @@ Initial statistical tests (Hypothesis 2 and Hypothesis 3) on the complete datase
 
 ## Machine Learning
 
-### 1. Predicting Political Stability (Supervised Learning - Logistic Regression)
-* **Method:** **Logistic Regression** was used to classify whether a nation's environment is **Stable** or **Unstable (High Risk)** based on cyber conflict features (Intensity, Motive, Actor Type).
-* **Results (Accuracy: 58.17%):** While political stability is influenced by many non-digital factors, the model revealed critical "Impact Coefficients":
-    * **Instability Drivers:** Cyber attacks linked to **Physical Warfare (Offline Conflict)**, **Sabotage**, and **Protests** are the strongest predictors of a destabilizing environment.
-    * **The Espionage Paradox:** Surprisingly, **Espionage** (Political and Industrial) is negatively correlated with instability. These "silent" operations require a stable target to remain undetected; chaos would hinder intelligence collection.
-* **Conclusion:** Cyber warfare acts as a catalyst. Stable nations are targets for "silent" espionage, whereas unstable nations face "loud" sabotage and hybrid warfare.
+### 1. Predicting Political Stability (Supervised Learning - Model Comparison & Tuning)
+* **Method:** Both **Logistic Regression** and **Random Forest Classifier** were optimized via `GridSearchCV` to classify whether a nation's environment is **Stable** or **Unstable (High Risk)** based on cyber conflict features (Intensity, Motive, Actor Type).
+
+* **Results & Performance Plateau (~58%):** The hyperparameter tuning revealed a strict informational ceiling. Tuned Logistic Regression achieved **57.97%** test accuracy, while Random Forest reached **58.06%**. This identical performance, combined with a low **Recall (~30%)** for the Unstable class, indicates severe **High Bias (Underfitting)**. It proves that cyber metadata alone provides a complementary signal but lacks the dense variance to independently predict macro-political risk.
+
+* **Key Feature Insights:**
+    * **Instability Drivers:** Cyber attacks directly intersecting with active physical conflicts (**`offline_conflict_intensity_Yes`**), alongside high-disruption motives like **Sabotage** and **Protest**, serve as the strongest predictors of a destabilizing political environment.
+    * **The Espionage Paradox:** Operations such as **Industrial Espionage** and **Data Theft & Doxing** heavily correlate with stable environments. These "silent" threat actors require a functioning state apparatus to systematically harvest intelligence; structural chaos would only hinder data collection and expose their operations.
+
+* **Conclusion:** Cyber warfare acts primarily as a diagnostic catalyst rather than an isolated cause. Stable nations are targets for silent espionage, whereas unstable nations face loud sabotage and hybrid warfare. To break past the 58% predictive barrier, future iterations must fuse cyber telemetry with external macroeconomic and institutional indicators.
 
 
-### 2. Forecasting Attack Motives (Supervised Learning - Random Forest)
-* **Method:** A **Random Forest Classifier** was trained to predict the primary **Motive** of a cyber attack (Financial, Protest, Espionage) based on a country's macroeconomic signature (**GDP per Capita** and **Inflation**).
-* **Results (Accuracy: 86.25%):**
-    * **Financial (97% Recall):** The model excels at identifying profit-driven attacks, confirming that national wealth and inflation are the primary magnets for global cybercrime.
-    * **Protest (61% Recall):** Economic distress triggers a mathematically predictable level of hacktivism and protest-motivated cyber activity.
-    * **Espionage (22% Recall):** The model struggled here, proving that state-sponsored espionage is driven by long-term military strategy rather than immediate macroeconomic indicators.
-* **Conclusion:** Macroeconomics is a near-perfect predictor for profit-motivated cybercrime, but insufficient for forecasting high-level state-sponsored espionage.
+### 2. Forecasting Attack Motives (Supervised Learning - Model Comparison & Tuning)
+* **Method:** Both **Logistic Regression** and a **Random Forest Classifier** were optimized via `GridSearchCV` to predict the primary **Motive** of a cyber attack (Financial, Protest, Political-Espionage) based on a country's macroeconomic signature (**GDP per Capita** and **Inflation**).
+
+* **Results (Best Accuracy: 79.52%):** The non-linear Random Forest significantly outperformed the linear Logistic Regression baseline (67.48%), proving that macroeconomic thresholds have a non-linear relationship with cyber target selection:
+
+    * **Financial (86% Recall):** The model excels at identifying profit-driven attacks, confirming that national wealth and inflation fluctuations are the primary baselines for commercial cybercrime.
+
+    * **Protest (67% Recall):** Macro-level economic distress triggers a mathematically predictable and traceable level of ideological hacktivism and protest-motivated cyber activity.
+
+    * **Political-Espionage (40% Recall):** The model faced structural limitations here, proving that state-sponsored espionage is driven by long-term geopolitical and military strategies rather than immediate domestic economic indicators.
+
+* **Conclusion:** Macroeconomics serves as a highly reliable framework for predicting profit-motivated cybercrime and localized hacktivism, but remains structurally insufficient for forecasting high-level, state-sponsored cyber espionage.
 
 
-### 3. Geopolitical Risk Profiling (Unsupervised Learning - K-Means Clustering)
-* **Method:** **K-Means Clustering** was applied to group countries based on their economic stature (GDP), inflation rates, and cyber target frequency to identify hidden patterns without predefined labels.
-* **Results:** The model successfully identified three distinct "Geopolitical Risk Clusters":
-    1.  **Stable Wealthy Targets:** High-GDP nations with high attack frequency but low inflation.
-    2.  **Volatile Emerging Markets:** Countries with moderate GDP and high inflation, attracting different motive profiles (predominantly protests).
-    3.  **Low-Intensity Zones:** Nations with minimal cyber-economic correlation.
-* **Conclusion:** Cybercrime patterns are not uniform across the globe; a country's economic "cluster" is a strong indicator of the specific threat landscape it will inhabit.
+### 3. Global Cyber Threat Zoning (Unsupervised Learning - K-Means)
+* **Method:** A **K-Means Clustering** algorithm was trained using standard scaled features: **Log GDP per Capita**, **Inflation (CPI)**, and **Log Total Attacks** to automatically segment nations into distinct strategic risk profiles. The optimal cluster count ($k=3$) was mathematically justified using the **Elbow Method**.
+
+* **Results & Cluster Segments:**
+    * **Zone A (High-Value Targets):** Wealthy, stable economies (Median GDP: ~$27.6k, Inflation: ~3.25%) that act as financial magnets, absorbing the highest volume of cyber operations (Median: 48 attacks).
+
+    * **Zone B (Low-Profile Passives):** Developing nations with lower digital asset density, resulting in minimal cyber target visibility (Median: 6 attacks).
+    
+    * **Zone C (Hyperinflation Crisis Zones):** Effectively isolated volatile outlier nations suffering from severe hyperinflation (Median CPI: ~138.8%). Despite lower GDP, they exhibit a high vulnerability vector (Median: 30 attacks), linking macro-collapse to cyber exposure.
+
+* **Conclusion:** Unsupervised clustering proves that a nation's cyber-risk landscape is explicitly bounded by its macroeconomic health; capital-dense nations face steady commercial threats, while hyperinflationary environments trigger structural security vulnerabilities.

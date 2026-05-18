@@ -159,7 +159,7 @@ Initial statistical tests (Hypothesis 2 and Hypothesis 3) on the complete datase
 * **Advanced Imbalance Mitigation:** Implementing synthetic oversampling techniques (such as SMOTE tailored for categorical/continuous mixes) or implementing cost-sensitive loss functions could improve the model’s sensitivity toward covert Political-Espionage patterns.
 * **Transition to Sequential Models:** Instead of processing data through static classification algorithms, transforming the preprocessed data into a sequence-ready format would allow the utilization of Recurrent Neural Networks (LSTMs) or Transformer-based time-series models. This setup could better capture the long-term lag between economic degradation and subsequent cyber mobilization.
 
-### Setup and Reproducibility
+## Setup and Reproducibility
 
 **Requirements**
 * Python 3.9+
@@ -184,7 +184,7 @@ python hypothesis_tests.ipynb
 python ML.ipynb
 ```
 
-### AI Assistance
+## AI Assistance
 
 During the development of this project, AI-powered tools (including Gemini/ChatGPT) were utilized as supplementary resources to assist with the following tasks:
 

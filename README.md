@@ -179,10 +179,11 @@ pip install -r requirements.txt
 
 ```bash
 python process_data.py
-python EDA.ipynb
-python hypothesis_tests.ipynb
-python ML.ipynb
 ```
+Run notebooks in order:
+EDA.ipynb
+hypothesis_tests.ipynb
+ML.ipynb
 
 ## AI Assistance
 

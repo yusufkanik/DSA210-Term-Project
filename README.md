@@ -78,6 +78,13 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 * **Conclusion:** Sudden drops in political stability do not universally trigger an immediate surge in cyber protests. The high variance indicates that hacktivist responses are highly localized. A stability drop might cause a massive cyber reaction in one country, but zero response in another. 
 
 
+## Methodological Note: Downsampling & The "Large N Problem"
+
+Initial statistical tests (Hypothesis 2 and Hypothesis 3) on the complete dataset yielded a p-value of exactly `0.0`. This is a computational limitation (float underflow) caused by an "overpowered test," where massive sample sizes artificially inflate test statistics. To report mathematically valid p-values:
+
+* **Statistical Testing:** We applied **random downsampling (n=600)** exclusively for the calculations. This resolved the overpowered test issue and yielded accurate, computable scientific p-values.
+* **Visualization:** All charts and plots continue to use the **full dataset** to accurately represent the true, unmanipulated data distribution.
+
 
 ### Hypothesis 2: Observed vs. Expected Attack Motives (Chi-Square Statistic)
 
@@ -85,8 +92,8 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 - **Hₐ:** The observed frequencies significantly deviate from the expected distribution (e.g., Financial motives appear more than expected).  
 - **Method:** Chi-Square Statistic to measure the discrepancy between actual crisis data and historical baseline data.
 - **Result:** **Highly Statistically Significant (Reject H₀)**
-* **Test Statistics:** Chi-Square Test | Chi-Square Statistic: `3081.9728` | Degrees of Freedom: `4` | P-Value: `0.0000e+00`
-* **Conclusion:** Severe economic crises (inflation > 10%) fundamentally shift hacker motivations. During normal conditions, threat actors prioritize **Financial** gain (**9,109** baseline attacks vs. **1,170** protest attacks). However, during an economic crisis, financial attacks plummet to just **148** incidents, while **Protest** attacks heavily dominate the landscape. During financial panic, hackers abandon monetary theft to weaponize the internet for protest and disruption.
+* **Test Statistics:** Chi-Square Test | Chi-Square Statistic: `105.2180` | Degrees of Freedom: `4` | P-Value: `7.6109e-22`
+* **Conclusion:** Severe economic crises (inflation > 10%) fundamentally shift hacker motivations. During normal conditions, threat actors prioritize **Financial** gain. However, during an economic crisis, financial attacks plummet to just **148** incidents, while **Protest** attacks heavily dominate the landscape. During financial panic, hackers abandon monetary theft to weaponize the internet for protest and disruption.
 
 
 
@@ -95,7 +102,7 @@ The dataset generation (`scripts/final_data.py`) involves the following steps:
 * **Hₐ:** The average wealth (GDP) of a target country differs significantly based on the attack motive.
 * **Method:** One-Way ANOVA (Analysis of Variance) to compare the mean GDP across the top three distinct attack motives, visualized using a log-scaled boxplot.
 * **Result:** **Highly Statistically Significant (Reject H₀)**
-* **Test Statistics:** One-Way ANOVA | F-Statistic: `1574.6477` | P-Value: `0.0000e+00`
+* **Test Statistics:** One-Way ANOVA | F-Statistic: `99.3725` | P-Value: `5.5887e-38`
 * **Conclusion:** There is a definitive link between the economic stature of a target nation and the motive of the cyber attack. Financial threat actors disproportionately target wealthier nations (higher GDP), likely seeking higher "return on investment." Conversely, Protest and Political-Espionage attacks are distributed more broadly across lower-GDP nations, indicating that these attacks are driven by geopolitical friction rather than purely economic gain.
 
 

@@ -158,3 +158,40 @@ Initial statistical tests (Hypothesis 2 and Hypothesis 3) on the complete datase
 * **Cross-Domain Feature Fusion:** To break the 58% predictive barrier, future iterations should ingest non-cyber external indicators directly into the pipeline, such as the World Bank’s Institutional Governance Indicators, military spending metrics, and regional alliance networks (e.g., NATO membership).
 * **Advanced Imbalance Mitigation:** Implementing synthetic oversampling techniques (such as SMOTE tailored for categorical/continuous mixes) or implementing cost-sensitive loss functions could improve the model’s sensitivity toward covert Political-Espionage patterns.
 * **Transition to Sequential Models:** Instead of processing data through static classification algorithms, transforming the preprocessed data into a sequence-ready format would allow the utilization of Recurrent Neural Networks (LSTMs) or Transformer-based time-series models. This setup could better capture the long-term lag between economic degradation and subsequent cyber mobilization.
+
+### Setup and Reproducibility
+
+**Requirements**
+* Python 3.9+
+* Dependencies listed in `requirements.txt` (including `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `wbgapi`, `pycountry`)
+
+**Installation**
+```bash
+git clone https://github.com/yusufkanik/DSA210-Term-Project.git
+cd DSA210-Term-Project
+
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Running the Project
+
+```bash
+python process_data.py
+python EDA.ipynb
+python hypothesis_tests.ipynb
+python ML.ipynb
+```
+
+### Project Structure
+
+DSA210-Term-Project/
+├── datasets/
+│   ├── processed/              
+│   └── raw/      
+├── notebooks/               
+├── plots/          
+├── process_data.py
+├── README.md
+└── requirements.txt

@@ -141,7 +141,20 @@ Initial statistical tests (Hypothesis 2 and Hypothesis 3) on the complete datase
     * **Zone A (High-Value Targets):** Wealthy, stable economies (Median GDP: ~$27.6k, Inflation: ~3.25%) that act as financial magnets, absorbing the highest volume of cyber operations (Median: 48 attacks).
 
     * **Zone B (Low-Profile Passives):** Developing nations with lower digital asset density, resulting in minimal cyber target visibility (Median: 6 attacks).
-    
+
     * **Zone C (Hyperinflation Crisis Zones):** Effectively isolated volatile outlier nations suffering from severe hyperinflation (Median CPI: ~138.8%). Despite lower GDP, they exhibit a high vulnerability vector (Median: 30 attacks), linking macro-collapse to cyber exposure.
 
 * **Conclusion:** Unsupervised clustering proves that a nation's cyber-risk landscape is explicitly bounded by its macroeconomic health; capital-dense nations face steady commercial threats, while hyperinflationary environments trigger structural security vulnerabilities.
+
+
+## Limitations and Future Work
+
+### Limitations
+* **Temporal Resolution Mismatch:** Merging event-based cyber incidents (recorded daily/monthly) with macroeconomic data (available only as annual global updates) forces the models to assume a static economic environment throughout a given year. This limits the ability to capture immediate, real-time cyber reactions to sudden financial shifts.
+* **The Informational Ceiling (Feature Sparsity):** As demonstrated by the 58% performance plateau in political stability predictions, utilizing purely cyber metadata (intensity, attacker type, motive) creates an underfitted model. Cyber telemetry is an excellent diagnostic signal, but it lacks the internal variance required to independently forecast complex nation-state stability.
+* **Extreme Class Imbalance:** The target variable for motives is heavily skewed toward profit-driven cybercrime (1,796 Financial cases vs. 154 Political-Espionage cases). This imbalance restricts the machine learning architectures from thoroughly learning the nuances of state-sponsored espionage, leading to lower recall rates in that sector.
+
+### Future Work
+* **Cross-Domain Feature Fusion:** To break the 58% predictive barrier, future iterations should ingest non-cyber external indicators directly into the pipeline, such as the World Bank’s Institutional Governance Indicators, military spending metrics, and regional alliance networks (e.g., NATO membership).
+* **Advanced Imbalance Mitigation:** Implementing synthetic oversampling techniques (such as SMOTE tailored for categorical/continuous mixes) or implementing cost-sensitive loss functions could improve the model’s sensitivity toward covert Political-Espionage patterns.
+* **Transition to Sequential Models:** Instead of processing data through static classification algorithms, transforming the preprocessed data into a sequence-ready format would allow the utilization of Recurrent Neural Networks (LSTMs) or Transformer-based time-series models. This setup could better capture the long-term lag between economic degradation and subsequent cyber mobilization.

@@ -181,8 +181,8 @@ pip install -r requirements.txt
 python process_data.py
 ```
 Run notebooks in order:
-EDA.ipynb
-hypothesis_tests.ipynb
+EDA.ipynb -
+hypothesis_tests.ipynb -
 ML.ipynb
 
 ## AI Assistance

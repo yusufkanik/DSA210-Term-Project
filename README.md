@@ -184,14 +184,11 @@ python hypothesis_tests.ipynb
 python ML.ipynb
 ```
 
-### Project Structure
+### AI Assistance
 
-DSA210-Term-Project/
-├── datasets/
-│   ├── processed/              
-│   └── raw/      
-├── notebooks/               
-├── plots/          
-├── process_data.py
-├── README.md
-└── requirements.txt
+During the development of this project, AI-powered tools (including Gemini/ChatGPT) were utilized as supplementary resources to assist with the following tasks:
+
+* **Code Refactoring & Optimization:** Debugging Python scripts and enhancing the efficiency of the machine learning pipelines.
+* **Data Visualization:** Improving the aesthetic clarity, labeling, and formatting of Matplotlib and Seaborn charts.
+* **Analytical Refinement:** Reviewing and refining the academic language used to interpret statistical test results and machine learning metrics.
+* **Documentation:** Structuring, formatting, and proofreading the final project report and README file.
